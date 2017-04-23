@@ -4,7 +4,7 @@ relays = 2;
 // dimensions of relay body
 relay_x = 21;
 relay_y = 32;
-relay_z = 19;
+relay_z = 18;
 
 // inset of terminals from body end, edge to center
 terminal_offset = 7.5;
@@ -12,8 +12,10 @@ terminal_offset = 7.5;
 // thickness of side, top, divider walls
 wall_thickness = 3;
 
-// cover height
+// cover specs
 cover_height = 16;
+cover_screw_diameter = 3;
+pass_through_width = 8;
 
 // terminal holes
 // set to "rect" and set x,y, or set to "round" and set diameter d
@@ -25,15 +27,15 @@ bottom_hole_y = 9;
 bottom_hole_d = 12;
 
 top_hole = "rect";
-top_hole_x = 12;
-top_hole_y = 9;
+top_hole_x = 13;
+top_hole_y = 10;
 top_hole_d = 12;
 
 // mounting tabs width
 mounting_tab_width = 12;
 // screw hole diameters
 mounting_screw_diameter = 4;
-cover_screw_diameter = 3;
+
 
 // uncomment the part you want to render
 //baseplate();
@@ -81,12 +83,12 @@ rotate([0,0,0]) {
         x_offset = i*(relay_x+wall_thickness)+wall_thickness;
         centerline = x_offset+relay_x/2;
         
-        translate([centerline,overall_y+1,wall_thickness+4])
+        translate([centerline,overall_y+1,wall_thickness+pass_through_width/2])
         rotate([90,0,0])
-        cylinder(d=8,h=overall_y+2,$fn=24);
+        cylinder(d=pass_through_width,h=overall_y+2,$fn=24);
         
-        translate([centerline-4,-1,wall_thickness+4])
-        cube([8,overall_y+2,cover_height]);
+        translate([centerline-pass_through_width/2,-1,wall_thickness+pass_through_width/2])
+        cube([pass_through_width,overall_y+2,cover_height]);
         
         
         
@@ -174,6 +176,7 @@ rotate([180,0,0]) {
 
 
 module baseplate() {
+rotate([180,0,0])    
 difference() {
     union() {
         cube([overall_x,overall_y,wall_thickness]);
