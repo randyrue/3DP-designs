@@ -22,8 +22,8 @@ pass_through_width = 8;
 // logic checks for "rect" and sets to round for anything else
 // ignores irrelevant value set
 bottom_hole = "round";
-bottom_hole_x = 12;
-bottom_hole_y = 9;
+bottom_hole_x = 13;
+bottom_hole_y = 10;
 bottom_hole_d = 12;
 
 top_hole = "rect";
