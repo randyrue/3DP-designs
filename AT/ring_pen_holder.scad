@@ -13,17 +13,17 @@ t_ht = 25;
 // width of the thumb ring split
 t_sp = 11;
 // thickness of the thumb ring
-t_th = 1;
+t_th = .6;
 
 
 // inner diameter of the pen ring
-p_id = 9;
+p_id = 11;
 // length/height of the pen ring
-p_ht = 15;
-// width of the pen split
-p_sp = 5;
+p_ht = 20;
+// width of the pen ring split
+p_sp = 6;
 // thickness of the pen ring
-p_th = .6;
+p_th = .5;
 
 // how much is the pen ring separated from the thumb ring
 pr_offset=6;
