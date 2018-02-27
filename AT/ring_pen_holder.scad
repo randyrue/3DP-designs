@@ -66,5 +66,3 @@ difference() {
     rotate([pr_rot,0,180])    
     cylinder(d=p_id-1, p_ht+5, center=true);
 }
-
-//
